@@ -23,7 +23,7 @@ To take this quiz, simply press the "Start Quiz" button. You can select an answe
 ## Screenshot of highscores
 ![Screenshot of highscores](./assets/images/quiz-highscore.png)
 ## 🔗 Project-Links
-- [Deployed Applocation](https://jeaustins27.github.io/Code-Quiz/)
+- [Deployed Application](https://jeaustins27.github.io/Code-Quiz/)
 - [GitHub Repo](https://github.com/jeaustins27/Code-Quiz)
 
 
