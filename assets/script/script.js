@@ -66,17 +66,17 @@ function startQuiz() {
     answerList.addEventListener("click", function (event) {
         var userAnswer = event.target;
         if (userAnswer.matches("button") === true && userAnswer.getAttribute("class") == questionList[count].correctAns) {
-            score += 20;
+            score += 20; //if the user answer is correct, 20 points will be added to their score.
             scoreBoard.textContent = score;
             answerList.innerHTML ="";
             count++;
-            answer.textContent = "Good job, that's correct!"
+            answer.textContent = "Good job, that's correct!" //notifying the user that the answer they have selected is correct
             showQuestion(questionList[count]);
         } else {
             timer -= 10;
             answerList.innerHTML = "";
             count++;
-            answer.textContent = "Sorry, that's incorrect!"
+            answer.textContent = "Sorry, that's incorrect!" //notifying the user that the answer they have selected is incorrect
             showQuestion(questionList[count]);
         } 
     })
@@ -88,15 +88,15 @@ function startQuiz() {
         countDwn.textContent = timer;
         if (timer <= 0 || count == questionList.length) {
             clearInterval(timedQuiz);
-            announcement.textContent = "Time's Up! Quiz Complete! You scored " + score + " points!";
+            announcement.textContent = "Time's Up! Quiz Complete! You scored " + score + " points!"; //Notifies the user that the remaining time is now 0 and they have completed the quiz with a set score.
             countDwn.textContent = "";
             scoreBoard.textContent = "";
             answerList.innerHTML = "";
             answer.textContent = "";
-            highScoreForm.setAttribute("style", "display: flex");
-            tsContainer.setAttribute("style", "display: none");
-            viewHSbtn.setAttribute("style", "display: flex");
-            resetBtn.setAttribute("style", "display: none");
+            highScoreForm.setAttribute("style", "display: flex"); //highscore form is displayed
+            tsContainer.setAttribute("style", "display: none"); //time and score are hidden
+            viewHSbtn.setAttribute("style", "display: flex"); //view highscores button is displayed
+            resetBtn.setAttribute("style", "display: none"); //reset scores button is hidden
 
             savedScore = score;
         }
@@ -135,17 +135,17 @@ subBtn.addEventListener("click", function(event){
     }
     if (hsInput.value != "") {
         var hsName = hsInput.value + " - Score: " + savedScore;
-        storedHS.push(hsName);
+        storedHS.push(hsName); //adding the new input highscore into the array/list
     }
     hsInput.value = "";
     localStorage.setItem("storedList", JSON.stringify(storedHS));
     displayHs();
-    subBtn.setAttribute("style", "display: none");
-    hsInput.setAttribute("style", "display: none");
-    quiz.setAttribute("style", "display: none");
-    hsTitle.setAttribute("style", "display: flex");
-    viewHSbtn.setAttribute("style", "display: none");
-    resetBtn.setAttribute("style", "display: flex");
+    subBtn.setAttribute("style", "display: none"); //submit button will be hidden
+    hsInput.setAttribute("style", "display: none"); //highscore imput text field will be hidden
+    quiz.setAttribute("style", "display: none"); // "main" page will be hidden
+    hsTitle.setAttribute("style", "display: flex"); //highscores list title will display
+    viewHSbtn.setAttribute("style", "display: none"); //view highscores button will be hidden
+    resetBtn.setAttribute("style", "display: flex"); //reset highscores button will display
 
 });
 
@@ -178,12 +178,12 @@ viewHSbtn.addEventListener("click", function(){
     hsInput.value = "";
     localStorage.setItem("storedList", JSON.stringify(storedHS));
     displayHs();
-    quiz.setAttribute("style", "display: none");
-    highScoreForm.setAttribute("style", "display: flex");
-    viewHSbtn.setAttribute("style", "display: none");
-    tsContainer.setAttribute("style", "display: none");
-    hsInput.setAttribute("style", "display: none");
-    subBtn.setAttribute("style", "display: none");
-    hsTitle.setAttribute("style", "display: flex");
+    quiz.setAttribute("style", "display: none"); // the "main" page will be hidden upon the click of the view highscores button
+    highScoreForm.setAttribute("style", "display: flex"); //the highscore form will display upon the click of the view highscores button
+    viewHSbtn.setAttribute("style", "display: none"); //the view highscores button will be hidden once it has been clicked
+    tsContainer.setAttribute("style", "display: none"); //the score and timer will be hidden
+    hsInput.setAttribute("style", "display: none"); //the input form for the highscores will be hidden
+    subBtn.setAttribute("style", "display: none"); //the submit button for the highscore form will be hidden
+    hsTitle.setAttribute("style", "display: flex"); //displays the highscore title
 
 })
