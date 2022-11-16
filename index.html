@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Quiz</title>
-    <link href="./assets/css/style.css">
-
-</head>
-<body>
-
-<script src="assets/script/script.js"></script>
-
-</body>
-</html>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <title>Coding Quiz</title>
+    </head>
+    <body>
+        <header>
+            <button id = "viewHS">View Highscores</button>
+            <div id = "tsContainer" style = "display: none">
+             <h3>Time Remaining:  <span id = "timer">60</span> second(s) </h3>
+             <h3>Score: <span id = "score">0</span></h3>
+             </div>
+        </header>
+        <div class="card">
+            <h1>Coding Quiz</h1>
+            <section class = "quiz">    
+                <span id = "main-text">In this quiz you will have 60 seconds to answer all the questions. Each question is worth 20 points, but be careful, each wrong answer will deduct 10 seconds from your time. Good luck!</span>
+                <ul id="answers"></ul>
+                <h4 id ="questionResult"></h4>
+                <button id = "start-btn">Start Quiz</button>
+            </section>
+            <form id="highscore-form" method = "POST" style = "display: none" >
+                <h2 id = "hstitle" style = "display: none">Highscore List </h2>
+                <ul id = "hslist"></ul>
+                <input type="text" placeholder="Enter Name" id="hs-input" />
+                <div class = "hsbuttons">
+                    <button id = "submit-btn">Submit Score</button>
+                    <button id = "restart-btn">Restart Quiz</button>
+                    <button id = "reset-btn">Reset Scores</button>
+                </div>
+            </form>
+            <script src="./assets/script/script.js"></script>
+          </body>
+        </html>
